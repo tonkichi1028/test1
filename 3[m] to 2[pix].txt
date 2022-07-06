@@ -1,0 +1,11 @@
+import cv2
+
+self.xyz_0 = np.float64([0.0, 0.0, 0.0])
+
+self.rvec = np.float64([[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
+self.tvec = np.float64([[0.0], [0.0], [0.0]])
+self.mtx = np.float64([[961.42348, 0.0, 645.99753], [0.0, 960.87749, 336.67837], [0.0, 0.0, 1.0]])
+self.dist = np.float64([0.032693, -0.088074, -0.001277, 0.005077, 0.000000])
+
+self.uv_0, jac = cv2.projectPoints(self.xyz_0, self.rvec, self.tvec, self.mtx, self.dist)
+self.uv_0 = self.uv_0[0][0]
